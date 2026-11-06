@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture - Digital Farming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🌱 Smart Agriculture</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#crops">Crops</a>
+        <a href="#methods">Farming Methods</a>
+        <a href="#irrigation">Irrigation</a>
+        <a href="#fertilizers">Fertilizers</a>
+        <a href="#soil">Soil</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>SMART AGRICULTURE</h1>
+        <h2>Digital Farming for a Better Future</h2>
+        <p>Discover modern farming techniques, crop information,
+           smart irrigation and sustainable agriculture.</p>
+        <a href="#crops" class="btn">Explore Farming</a>
+    </div>
+</section>
+
+<section class="section" id="crops">
+    <h2>🌾 Crop Information Finder</h2>
+    <p>Search for crops to learn about their growing conditions.</p>
+
+    <div class="search-box">
+        <input type="text" id="cropSearch"
+               placeholder="Search crops...">
+        <button onclick="searchCrop()">Search</button>
+    </div>
+
+    <div id="cropResult" class="result"></div>
+</section>
+
+<section class="section" id="methods">
+    <h2>🚜 Modern Farming Methods</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Hydroponics</h3>
+            <p>Growing plants without soil using nutrient-rich water.</p>
+        </div>
+
+        <div class="card">
+            <h3>Organic Farming</h3>
+            <p>Using natural fertilizers and eco-friendly methods.</p>
+        </div>
+
+        <div class="card">
+            <h3>Vertical Farming</h3>
+            <p>Growing crops in vertically stacked layers.</p>
+        </div>
+
+        <div class="card">
+            <h3>Precision Agriculture</h3>
+            <p>Using sensors and technology to improve crop production.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="irrigation">
+    <h2>💧 Irrigation Techniques</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Drip Irrigation</h3>
+            <p>Delivers water directly to plant roots and reduces water waste.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sprinkler Irrigation</h3>
+            <p>Sprays water over crops like natural rainfall.</p>
+        </div>
+
+        <div class="card">
+            <h3>Surface Irrigation</h3>
+            <p>Water flows across agricultural land using gravity.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="fertilizers">
+    <h2>🌿 Fertilizer Information</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Organic Fertilizers</h3>
+            <p>Compost, farmyard manure and vermicompost improve soil health.</p>
+        </div>
+
+        <div class="card">
+            <h3>Nitrogen Fertilizers</h3>
+            <p>Support leaf growth and plant development.</p>
+        </div>
+
+        <div class="card">
+            <h3>Phosphorus Fertilizers</h3>
+            <p>Support root development and flowering.</p>
+        </div>
+    </div>
+
+    <h3>Fertilizer Calculator</h3>
+    <div class="calculator">
+        <input type="number" id="area"
+               placeholder="Enter land area in acres" min="0">
+        <input type="number" id="rate"
+               placeholder="Fertilizer rate (kg/acre)" min="0">
+        <button onclick="calculateFertilizer()">Calculate</button>
+        <h3 id="fertilizerResult"></h3>
+        <small>Enter the recommended fertilizer rate for your crop and soil.</small>
+    </div>
+</section>
+
+<section class="section" id="soil">
+    <h2>🌍 Soil Information</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Clay Soil</h3>
+            <p>Holds water and nutrients. Suitable for crops such as rice.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sandy Soil</h3>
+            <p>Drains water quickly. Suitable for groundnut and some root crops.</p>
+        </div>
+
+        <div class="card">
+            <h3>Loamy Soil</h3>
+            <p>A balanced soil type suitable for many agricultural crops.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section weather">
+    <h2>🌤️ Sample Weather Information</h2>
+    <div class="weather-card">
+        <h3>Bengaluru - Sample Data</h3>
+        <p>Temperature: 28°C</p>
+        <p>Humidity: 65%</p>
+        <p>Condition: Partly Cloudy</p>
+        <small>Illustrative sample values, not live weather data.</small>
+    </div>
+</section>
+
+<section class="section">
+    <h2>👨‍🌾 Random Farming Tips</h2>
+    <div class="tip-box">
+        <p id="tip">Click below to get a farming tip!</p>
+        <button onclick="generateTip()">Get Farming Tip</button>
+    </div>
+</section>
+
+<section class="section" id="gallery">
+    <h2>📸 Interactive Farming Gallery</h2>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600"
+             alt="Green agricultural field" onclick="showImage(this)">
+        <img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?w=600"
+             alt="Farm landscape" onclick="showImage(this)">
+        <img src="https://images.unsplash.com/photo-1523742811297-9b4c1f6c7d8b?w=600"
+             alt="Agricultural crops" onclick="showImage(this)">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600"
+             alt="Fresh vegetables" onclick="showImage(this)">
+    </div>
+</section>
+
+<div id="imageModal" class="modal" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="modalImage" alt="Selected farming image">
+</div>
+
+<section class="section farmer-tips">
+    <h2>🌱 Farmer Tips</h2>
+    <ul>
+        <li>Test soil before planting crops.</li>
+        <li>Use quality seeds for better production.</li>
+        <li>Practice crop rotation.</li>
+        <li>Use drip irrigation to save water.</li>
+        <li>Monitor crops regularly for pests.</li>
+        <li>Use fertilizers according to soil test recommendations.</li>
+    </ul>
+</section>
+
+<footer>
+    <h3>🌱 Smart Agriculture – Digital Farming</h3>
+    <p>Technology for Sustainable Agriculture</p>
+    <p>© 2026 Smart Agriculture Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
